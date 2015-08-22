@@ -1,4 +1,4 @@
-# highlight_diff [![Build Status](https://travis-ci.org/shurcooL/highlight_diff.svg?branch=master)](https://travis-ci.org/shurcooL/highlight_diff)
+# highlight_diff [![Build Status](https://travis-ci.org/shurcooL/highlight_diff.svg?branch=master)](https://travis-ci.org/shurcooL/highlight_diff) [![GoDoc](https://godoc.org/github.com/shurcooL/highlight_diff?status.svg)](https://godoc.org/github.com/shurcooL/highlight_diff)
 
 Package highlight_diff provides syntaxhighlight.Printer and syntaxhighlight.Annotator implementations
 for diff format. It implements intra-block character-level inner diff highlighting.
