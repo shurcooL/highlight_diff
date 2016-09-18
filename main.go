@@ -35,11 +35,7 @@ func Print(s *Scanner, w io.Writer) error {
 		}
 	}
 
-	if err := s.Err(); err != nil {
-		return err
-	}
-
-	return nil
+	return s.Err()
 }
 
 type HTMLConfig []string
