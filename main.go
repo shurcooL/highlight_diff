@@ -163,15 +163,15 @@ func HighlightedDiffFunc(leftContent, rightContent string, segments *[2][]*annot
 		offset := offsets[side]
 
 		for _, diff := range diffs {
-			if side == 0 && diff.Type == -1 {
+			if side == 0 && diff.Type == diffmatchpatch.DiffDelete {
 				(*segments)[side] = append((*segments)[side], &annotate.Annotation{Start: offset, End: offset + len(diff.Text), Left: []byte(`<span class="x">`), Right: []byte(`</span>`), WantInner: 1})
 				offset += len(diff.Text)
 			}
-			if side == 1 && diff.Type == +1 {
+			if side == 1 && diff.Type == diffmatchpatch.DiffInsert {
 				(*segments)[side] = append((*segments)[side], &annotate.Annotation{Start: offset, End: offset + len(diff.Text), Left: []byte(`<span class="x">`), Right: []byte(`</span>`), WantInner: 1})
 				offset += len(diff.Text)
 			}
-			if diff.Type == 0 {
+			if diff.Type == diffmatchpatch.DiffEqual {
 				offset += len(diff.Text)
 			}
 		}
